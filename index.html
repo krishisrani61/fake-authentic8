@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload = () => {
+      const authEndpoint = "https://auth.isranicloud.com/authorize";
+      const clientId = "TunEZGqT7U1DH7YPDNezhbMWTstxBXG9";
+      const redirectUri = "https://your-app.example.com/callback";
+      const scope = "openid profile email";
+      const state = "demoState123";
+      const nonce = "demoNonce456";
+      const responseType = "code";
+
+      const authUrl = `${authEndpoint}?response_type=${encodeURIComponent(responseType)}&client_id=${encodeURIComponent(clientId)}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}&state=${encodeURIComponent(state)}&nonce=${encodeURIComponent(nonce)}`;
+
+      window.location.href = authUrl;
+    };
+  </script>
+</head>
+<body style="margin:0; background:#000;"></body>
+</html>
